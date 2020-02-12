@@ -864,6 +864,7 @@ Fixed
   ``macs2-callpeak``
 - Use uncompressed FASTQ files as input to STAR aligner to prevent
   issues on (network) filesystems without FIFO support
+- Fix imports in ``differentialexpression-shrna`` process
 
 
 =================
