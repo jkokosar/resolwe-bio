@@ -813,7 +813,7 @@ class UploadProcessorTestCase(KBBioProcessTestCase):
         self.assertFields(prot_data, "source", "UniProtKB")
 
     @tag_process("upload-proteomics-sample-set")
-    def test_upload_proteomics_sample_set(self):
+    def test_upload_proteomics_sample_set(self)
         base = Path("proteomics")
         inputs = base / "input"
         outputs = base / "output"
