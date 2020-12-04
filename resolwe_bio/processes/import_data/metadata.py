@@ -87,7 +87,7 @@ class UploadOrangeMetadata(Process):
     slug = "upload-orange-metadata"
     name = "Metadata table for Orange"
     process_type = "data:metadata:orange"
-    version = "1.0.1"
+    version = "1.1.0"
     category = "Import"
     scheduling_class = SchedulingClass.BATCH
     requirements = {

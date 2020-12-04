@@ -13,7 +13,7 @@
     resources:
       network: true
   data_name: "{{ alignments.bam.file|basename|default('?') }} ({{ (alignments|sample_name) }})"
-  version: 2.0.0
+  version: 2.1.0
   type: data:expression:htseq:normalized
   category: Quantify
   flow_collection: sample
@@ -236,7 +236,7 @@
     resources:
       network: true
   data_name: "{{ alignments.bam.file|basename|default('?') }} ({{ (alignments|sample_name) }})"
-  version: 1.7.0
+  version: 1.8.0
   type: data:expression:htseq:cpm
   category: Quantify
   flow_collection: sample

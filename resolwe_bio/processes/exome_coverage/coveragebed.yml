@@ -13,7 +13,7 @@
     resources:
       memory: 32768
   data_name: "Coverage ({{ alignment|sample_name|default('?') }})"
-  version: 4.1.2
+  version: 4.2.0
   type: data:coverage
   category: Other
   flow_collection: sample

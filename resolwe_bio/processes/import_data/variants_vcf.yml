@@ -13,7 +13,7 @@
     resources:
       network: true
   data_name: '{{ src.file|default("?") }}'
-  version: 2.1.1
+  version: 2.2.0
   type: data:variants:vcf
   category: Import
   persistence: RAW

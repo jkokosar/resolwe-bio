@@ -14,7 +14,7 @@
       cores: 4
       network: true
   data_name: '{{ src.file|default("?") }}'
-  version: 1.5.0
+  version: 1.6.0
   type: data:alignment:bam:upload
   flow_collection: sample
   category: Import
@@ -124,7 +124,7 @@
       cores: 4
       network: true
   data_name: '{{ src.file|default("?") }}'
-  version: 1.5.0
+  version: 1.6.0
   type: data:alignment:bam:upload
   category: Import
   flow_collection: sample
@@ -225,7 +225,7 @@
       cores: 4
       network: true
   data_name: "{{ bam|sample_name|default('?') }}"
-  version: 0.6.0
+  version: 0.7.0
   type: data:alignment:bam:secondary
   flow_collection: sample
   category: Import

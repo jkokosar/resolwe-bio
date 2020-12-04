@@ -350,7 +350,7 @@ re-save feature_type "gene"
                     },
                     "executor": {
                         "docker": {
-                            "image": "resolwebio/base:ubuntu-18.04",
+                            "image": "resolwebio/base:ubuntu-20.04",
                         },
                     },
                 },

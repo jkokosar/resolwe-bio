@@ -11,7 +11,7 @@
       docker:
         image: resolwebio/chipseq:5.0.0
   data_name: "Peak score ({{ peaks.narrow_peaks.file|basename|default('?') }})"
-  version: 2.1.0
+  version: 2.2.0
   type: data:chipseq:peakscore
   category: Other
   flow_collection: sample
@@ -66,7 +66,7 @@
       docker:
         image: resolwebio/chipseq:5.0.0
   data_name: "Gene score ({{ peakscore.peak_score.file|basename|default('?') }})"
-  version: 1.1.1
+  version: 1.2.0
   type: data:chipseq:genescore
   category: Other
   persistence: TEMP

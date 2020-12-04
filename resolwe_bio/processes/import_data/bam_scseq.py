@@ -18,7 +18,7 @@ class ImportScBam(Process):
     slug = "upload-bam-scseq-indexed"
     name = "Single cell BAM file and index"
     process_type = "data:alignment:bam:scseq"
-    version = "1.1.1"
+    version = "1.2.0"
     category = "Import"
     scheduling_class = SchedulingClass.BATCH
     entity = {"type": "sample"}

@@ -11,7 +11,7 @@
       docker:
         image: resolwebio/biox:2.0.0
   data_name: "Expression time course"
-  version: 1.1.1
+  version: 1.2.0
   type: data:etc
   category: Other
   persistence: CACHED
@@ -41,3 +41,4 @@
       re-checkrc
 
       re-save-file etcfile etc.json.gz
+      re-save etc etc.json

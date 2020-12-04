@@ -4,7 +4,7 @@
 import argparse
 import csv
 
-from resolwe_runtime_utils import error
+from resolwe_runtime_utils import error, send_message
 
 
 def parse_arguments():
@@ -43,7 +43,7 @@ def main():
             if amp_name not in amplicon_names:
                 amplicon_names.add(amp_name)
             else:
-                print(
+                send_message(
                     error(
                         "Amplicon names must be unique. Amplicon {} is seen multiple times.".format(
                             amp_name

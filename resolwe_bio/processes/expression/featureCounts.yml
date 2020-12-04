@@ -15,7 +15,7 @@
       memory: 32768
       network: true
   data_name: "{{ alignment.aligned_reads|sample_name|default('?') }}"
-  version: 4.0.0
+  version: 4.1.0
   type: data:expression:featurecounts
   category: Quantify
   flow_collection: sample
