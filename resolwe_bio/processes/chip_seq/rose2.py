@@ -286,7 +286,7 @@ class Rose2(Process):
         if (
             inputs.input_macs
             and inputs.input_macs.type == "data:chipseq:callpeak:macs2:"
-            and inputs.input_macs.control_bam
+            and inputs.input_macs.output.control_bam
             and inputs.use_filtered_bam
         ):
             control = inputs.input_macs.output.control_bam.path
@@ -305,7 +305,7 @@ class Rose2(Process):
         if inputs.stitch or inputs.stitch == 0:
             cmd = cmd["--stitch"][inputs.stitch]
         if inputs.mask:
-            cmd = cmd["--mask"][inputs.mask.bed.path]
+            cmd = cmd["--mask"][inputs.mask.output.bed.path]
         cmd = cmd["--out"]["."]
         return_code, _, _ = cmd & TEE(retcode=None)
         if return_code:

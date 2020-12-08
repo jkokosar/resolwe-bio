@@ -202,7 +202,11 @@
           mv expression.tab "${S_NAME}_expression.tab"
           re-export "${S_NAME}_expression.tab"
           re-run upload-expression-cuffnorm \
-            '{"exp_type":"FPKM", "cxb": {{ exp|id }}, "exp": "'${S_NAME}'_expression.tab"}'
+          '{
+            "exp_type":"FPKM",
+            "cxb":{{ exp|id }},
+            "exp":"'"${S_NAME}_expression.tab"'"
+          }'
         {% endfor %}
       {% else %}
         {% for exp in cuffquant %}
@@ -212,7 +216,11 @@
           mv expression.tab "${S_NAME}_expression.tab"
           re-export "${S_NAME}_expression.tab"
           re-run upload-expression-cuffnorm \
-            '{"exp_type":"FPKM", "cxb":{{ exp|id }}, "exp":"'${S_NAME}'_expression.tab"}'
+          '{
+            "exp_type":"FPKM",
+            "cxb":{{ exp|id }},
+            "exp":"'"${S_NAME}_expression.tab"'"
+          }'
         {% endfor %}
       {% endif %}
 
