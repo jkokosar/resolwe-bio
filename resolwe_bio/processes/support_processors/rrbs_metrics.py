@@ -31,7 +31,7 @@ class CollectRrbsMetrics(Process):
     name = "Picard CollectRrbsMetrics"
     category = "Picard"
     process_type = "data:picard:rrbs"
-    version = "2.0.0"
+    version = "2.0.1"
     scheduling_class = SchedulingClass.BATCH
     entity = {"type": "sample"}
     requirements = {
@@ -98,15 +98,15 @@ class CollectRrbsMetrics(Process):
 
     def run(self, inputs, outputs):
         """Run analysis."""
-        basename = os.path.basename(inputs.bam.bam.path)
+        basename = os.path.basename(inputs.bam.output.bam.path)
         assert basename.endswith(".bam")
         name = basename[:-4]
 
         args = [
             "--INPUT",
-            inputs.bam.bam.path,
+            inputs.bam.output.bam.path,
             "--REFERENCE",
-            inputs.genome.fasta.path,
+            inputs.genome.output.fasta.path,
             "--METRICS_FILE_PREFIX",
             name,
             "--C_QUALITY_THRESHOLD",
@@ -140,5 +140,5 @@ class CollectRrbsMetrics(Process):
         outputs.report = report_file
         outputs.detailed_report = detailed_file
         outputs.plot = out_plot
-        outputs.species = inputs.bam.species
-        outputs.build = inputs.bam.build
+        outputs.species = inputs.bam.output.species
+        outputs.build = inputs.bam.output.build

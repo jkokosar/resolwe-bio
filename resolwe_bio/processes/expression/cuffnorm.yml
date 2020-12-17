@@ -201,7 +201,8 @@
           re-checkrc 'Expression file parsing failed.'
           mv expression.tab "${S_NAME}_expression.tab"
           re-export "${S_NAME}_expression.tab"
-          echo 'run {"process":"upload-expression-cuffnorm","input":{"exp_type":"FPKM","cxb":{{ exp|id }},"exp":'\"${S_NAME}_expression.tab\"'}}'
+          re-run upload-expression-cuffnorm \
+            '{"exp_type":"FPKM", "cxb": {{ exp|id }}, "exp": "'${S_NAME}'_expression.tab"}'
         {% endfor %}
       {% else %}
         {% for exp in cuffquant %}
@@ -210,7 +211,8 @@
           re-checkrc 'Expression file parsing failed.'
           mv expression.tab "${S_NAME}_expression.tab"
           re-export "${S_NAME}_expression.tab"
-          echo 'run {"process":"upload-expression-cuffnorm","input":{"exp_type":"FPKM","cxb":{{ exp|id }},"exp":'\"${S_NAME}_expression.tab\"'}}'
+          re-run upload-expression-cuffnorm \
+            '{"exp_type":"FPKM", "cxb":{{ exp|id }}, "exp":"'${S_NAME}'_expression.tab"}'
         {% endfor %}
       {% endif %}
 

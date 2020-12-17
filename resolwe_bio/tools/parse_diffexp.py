@@ -7,7 +7,7 @@ import json
 import numpy as np
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
-from resolwe_runtime_utils import send_message, error
+from resolwe_runtime_utils import error, send_message
 
 
 def parse_arguments():

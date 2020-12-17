@@ -26,7 +26,7 @@ class BamToBedpe(Process):
         "resources": {"cores": 1, "memory": 8192},
     }
     data_name = "Bedtools bamtobed ({{alignment|sample_name|default('?')}})"
-    version = "1.0.0"
+    version = "1.0.1"
     process_type = "data:bedpe"
     category = "Other"
     entity = {"type": "sample"}
@@ -46,7 +46,7 @@ class BamToBedpe(Process):
 
     def run(self, inputs, outputs):
         """Run the analysis."""
-        path = inputs.alignment.bam.path
+        path = inputs.alignment.output.bam.path
         basename = os.path.basename(path)
         assert basename.endswith(".bam")
         name = basename[:-4]
@@ -65,8 +65,8 @@ class BamToBedpe(Process):
             self.error("Converting BAM to BEDPE with Bedtools bamtobed failed.")
 
         outputs.bedpe = bedpe_file
-        outputs.species = inputs.alignment.species
-        outputs.build = inputs.alignment.build
+        outputs.species = inputs.alignment.output.species
+        outputs.build = inputs.alignment.output.build
 
 
 class ScaleBigWig(Process):
@@ -115,7 +115,7 @@ class ScaleBigWig(Process):
 
     def run(self, inputs, outputs):
         """Run the analysis."""
-        path = inputs.alignment.bam.path
+        path = inputs.alignment.output.bam.path
         basename = os.path.basename(path)
         assert basename.endswith(".bam")
         name = basename[:-4]
@@ -148,5 +148,5 @@ class ScaleBigWig(Process):
             self.error("Generation of a scaled BigWig file with bamCoverage failed.")
 
         outputs.bigwig = out_file
-        outputs.species = inputs.alignment.species
-        outputs.build = inputs.alignment.build
+        outputs.species = inputs.alignment.output.species
+        outputs.build = inputs.alignment.output.build
