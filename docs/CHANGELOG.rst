@@ -16,6 +16,7 @@ Added
 
 Changed
 -------
+- Calculate up to 5 principal components in ``pca`` process
 
 Fixed
 -----
