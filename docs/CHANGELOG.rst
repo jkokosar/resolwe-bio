@@ -13,6 +13,7 @@ Unreleased
 
 Added
 -----
+- Save test folder data using actions/upload-artifact
 
 Changed
 -------
